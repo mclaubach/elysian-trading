@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elysian Trading — Operations Consulting</title>
+  <meta name="description" content="Operations consulting for businesses ready to move faster. Modern systems. Real output. Los Angeles, Orange County, Bay Area.">
+  <meta property="og:title" content="Elysian Trading">
+  <meta property="og:description" content="Operations consulting for businesses ready to move faster.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elysiantrading.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream:       #EDE8DE;
+      --cream-mid:   #E0D9CE;
+      --cream-dark:  #C8BFB2;
+      --navy:        #0D0D1A;
+      --navy-mid:    #1A1A2C;
+      --coral:       #B85C42;
+      --coral-light: #D4896F;
+      --teal:        #5C8E8A;
+      --teal-light:  #8CBBB8;
+      --gold:        #B09258;
+      --text:        #141420;
+      --text-muted:  #6A6878;
+      --text-faint:  #A8A6B2;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── NAV ─── */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 52px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-cta {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-cta:hover {
+      color: var(--coral);
+    }
+
+    /* ─── HERO ─── */
+
+    header {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 52px 88px;
+      overflow: hidden;
+    }
+
+    .geo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 65vw;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .geo-fill {
+      position: absolute;
+      top: 50%;
+      right: -120px;
+      transform: translateY(-50%);
+      width: 580px;
+      height: 580px;
+      border-radius: 50%;
+      background: conic-gradient(from 200deg, #C4705A 0%, #D4A06A 30%, #7AADA9 60%, #C4705A 100%);
+      opacity: 0.13;
+    }
+
+    .geo-ring {
+      position: absolute;
+      top: 50%;
+      right: -170px;
+      transform: translateY(-50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 92, 66, 0.2);
+    }
+
+    .geo-ring-2 {
+      position: absolute;
+      top: 50%;
+      right: -220px;
+      transform: translateY(-50%);
+      width: 820px;
+      height: 820px;
+      border-radius: 50%;
+      border: 1px solid rgba(92, 142, 138, 0.12);
+    }
+
+    .geo-lines {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45vh;
+      background-image:
+        linear-gradient(to right,  rgba(20,20,32,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(20,20,32,0.05) 1px, transparent 1px);
+      background-size: 72px 54px;
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 100%);
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(62px, 8.5vw, 128px);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      max-width: 720px;
+      margin-bottom: 44px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 360px;
+      line-height: 1.85;
+      margin-bottom: 52px;
+    }
+
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 11px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .arrow-link::after {
+      content: '';
+      display: block;
+      width: 44px;
+      height: 1px;
+      background: var(--coral);
+      transition: width 0.35s ease;
+    }
+
+    .arrow-link:hover { color: var(--coral); }
+    .arrow-link:hover::after { width: 72px; }
+
+    /* ─── TICKER ─── */
+
+    .ticker {
+      background: var(--navy);
+      padding: 13px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      animation: ticker 28s linear infinite;
+    }
+
+    .ticker-item {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(237,232,222,0.35);
+      padding: 0 52px;
+    }
+
+    .ticker-item .jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 10px;
+      color: var(--coral);
+      margin-right: 16px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── SHARED SECTION STYLES ─── */
+
+    main section {
+      padding: 112px 52px;
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 9px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 64px;
+    }
+
+    .label::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--cream-dark);
+    }
+
+    .label-dark {
+      color: rgba(237,232,222,0.25);
+    }
+
+    .label-dark::after {
+      background: rgba(237,232,222,0.1);
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+    }
+
+    h2 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    /* ─── WORK ─── */
+
+    .work {
+      border-top: 1px solid var(--cream-mid);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px 80px;
+      max-width: 960px;
+    }
+
+    .work-intro {
+      grid-column: 1 / -1;
+    }
+
+    .work-intro h2 {
+      margin-bottom: 20px;
+      max-width: 560px;
+    }
+
+    .work-intro p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .work-item .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      color: var(--coral);
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+
+    .work-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .work-item p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    /* ─── APPROACH ─── */
+
+    .approach {
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .approach-left h2 {
+      color: var(--cream);
+      margin-bottom: 28px;
+    }
+
+    .approach-left h2 em {
+      color: var(--coral-light);
+    }
+
+    .approach-left p {
+      font-size: 15px;
+      color: rgba(237,232,222,0.5);
+      line-height: 1.9;
+      max-width: 420px;
+    }
+
+    .approach-left p + p {
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(237,232,222,0.3);
+    }
+
+    .pricing-row {
+      border-top: 1px solid rgba(237,232,222,0.08);
+      padding: 26px 0;
+    }
+
+    .pricing-row:last-child {
+      border-bottom: 1px solid rgba(237,232,222,0.08);
+    }
+
+    .pricing-tag {
+      font-size: 9px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: rgba(237,232,222,0.25);
+      margin-bottom: 8px;
+    }
+
+    .pricing-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 34px;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .pricing-note {
+      font-size: 13px;
+      color: rgba(237,232,222,0.35);
+      line-height: 1.7;
+    }
+
+    /* ─── NETWORK ─── */
+
+    .network {
+      border-top: 1px solid var(--cream-mid);
+    }
+
+    .network-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .network-grid h2 {
+      margin-bottom: 24px;
+    }
+
+    .network-grid p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.9;
+      max-width: 420px;
+    }
+
+    .network-grid p + p {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text-faint);
+    }
+
+    .network-list {
+      list-style: none;
+    }
+
+    .network-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-top: 1px solid var(--cream-mid);
+      padding: 18px 0;
+    }
+
+    .network-list li:last-child {
+      border-bottom: 1px solid var(--cream-mid);
+    }
+
+    .n-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--text);
+    }
+
+    .n-desc {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--text-faint);
+    }
+
+    /* ─── CONTACT ─── */
+
+    .contact {
+      border-top: 1px solid var(--cream-mid);
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .contact-geo-1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 540px;
+      height: 540px;
+      border-radius: 50%;
+      border: 1px solid rgba(92, 142, 138, 0.12);
+      pointer-events: none;
+    }
+
+    .contact-geo-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 92, 66, 0.15);
+      pointer-events: none;
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-inner h2 {
+      font-size: clamp(44px, 6vw, 80px);
+      margin-bottom: 44px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 15px;
+      letter-spacing: 0.14em;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--coral);
+      padding-bottom: 3px;
+      margin-bottom: 44px;
+      transition: color 0.3s;
+    }
+
+    .contact-email:hover {
+      color: var(--coral);
+    }
+
+    .contact-locations {
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .contact-locations span {
+      margin: 0 14px;
+      color: var(--cream-dark);
+    }
+
+    /* ─── FOOTER ─── */
+
+    footer {
+      background: var(--navy);
+      padding: 30px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(237,232,222,0.25);
+    }
+
+    .footer-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 10px;
+      color: rgba(237,232,222,0.12);
+    }
+
+    .footer-copy {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: rgba(237,232,222,0.15);
+    }
+
+    /* ─── RESPONSIVE ─── */
+
+    @media (max-width: 800px) {
+      nav { padding: 22px 24px; }
+      .nav-jp { display: none; }
+
+      header { padding: 0 24px 64px; }
+
+      main section { padding: 80px 24px; }
+
+      .work-grid,
+      .approach-grid,
+      .network-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      .work-intro { grid-column: 1; }
+
+      .geo-fill  { width: 320px; height: 320px; right: -80px; }
+      .geo-ring  { width: 400px; height: 400px; right: -120px; }
+      .geo-ring-2 { display: none; }
+
+      footer { flex-direction: column; gap: 10px; padding: 24px; text-align: center; }
+      .footer-jp { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Elysian Trading</a>
+    <span class="nav-jp">事業運営</span>
+    <a href="mailto:matthew@elysiantrading.com" class="nav-cta">Get in touch</a>
+  </nav>
+
+  <header>
+    <div class="geo" aria-hidden="true">
+      <div class="geo-fill"></div>
+      <div class="geo-ring"></div>
+      <div class="geo-ring-2"></div>
+    </div>
+    <div class="geo-lines" aria-hidden="true"></div>
+
+    <p class="hero-eyebrow">Los Angeles — Est. 2026</p>
+    <h1>We come in.<br><em>Things change.</em></h1>
+    <p class="hero-sub">Operations consulting for businesses ready to move faster. Modern systems. Real output. No reports that sit on shelves.</p>
+    <a href="#work" class="arrow-link">See what we do</a>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="jp">事業運営</span>Operations &amp; Systems</span>
+      <span class="ticker-item"><span class="jp">近代化</span>Modernization</span>
+      <span class="ticker-item"><span class="jp">AI 統合</span>AI Integration</span>
+      <span class="ticker-item"><span class="jp">戦略</span>Strategy</span>
+      <span class="ticker-item"><span class="jp">成長</span>Growth</span>
+      <span class="ticker-item"><span class="jp">改善</span>Improvement</span>
+      <span class="ticker-item"><span class="jp">事業運営</span>Operations &amp; Systems</span>
+      <span class="ticker-item"><span class="jp">近代化</span>Modernization</span>
+      <span class="ticker-item"><span class="jp">AI 統合</span>AI Integration</span>
+      <span class="ticker-item"><span class="jp">戦略</span>Strategy</span>
+      <span class="ticker-item"><span class="jp">成長</span>Growth</span>
+      <span class="ticker-item"><span class="jp">改善</span>Improvement</span>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="work" id="work">
+      <p class="label">What we do</p>
+      <div class="work-grid">
+        <div class="work-intro">
+          <h2>Sharp operations for businesses serious about what comes next.</h2>
+          <p>We work at the inflection point — the moment between where you are and where you're trying to go. We help close that gap with systems that run after we leave.</p>
+        </div>
+
+        <div class="work-item">
+          <p class="num">01</p>
+          <h3>The Diagnostic</h3>
+          <p>One week. Full operational audit. Where's the friction, what's missing, what's being left on the table. You leave with a clear picture and a prioritized plan.</p>
+        </div>
+
+        <div class="work-item">
+          <p class="num">02</p>
+          <h3>The Build</h3>
+          <p>Two to four weeks. We identify what needs to exist and build it — hands on, alongside your team. AI workflows, reporting infrastructure, operational systems. Leave it running.</p>
+        </div>
+
+        <div class="work-item">
+          <p class="num">03</p>
+          <h3>AI That Actually Works</h3>
+          <p>Not a buzzword — a system. We know what's usable and where it creates real leverage. We build it into your operations so it compounds over time.</p>
+        </div>
+
+        <div class="work-item">
+          <p class="num">04</p>
+          <h3>The Ongoing</h3>
+          <p>A steady hand for clients who want one. Limited availability. Not advertised — offered only to clients we've already worked with.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <p class="label label-dark">How we work</p>
+      <div class="approach-grid">
+        <div class="approach-left">
+          <h2>Every engagement starts with <em>a meal.</em></h2>
+          <p>Lunch or dinner, somewhere you like. An hour of honest conversation about where the business is and where it's trying to go. If it's a fit, we figure out next steps. If it's not, you still had a good meal and a clear head.</p>
+          <p>We work with founders and operators in Los Angeles, Orange County, and the Bay Area. We meet in person. We prefer it that way.</p>
+        </div>
+        <div class="approach-right">
+          <div class="pricing-row">
+            <p class="pricing-tag">Day Rate</p>
+            <p class="pricing-num">$1,200</p>
+            <p class="pricing-note">Billed transparently. You know what you're paying before we start.</p>
+          </div>
+          <div class="pricing-row">
+            <p class="pricing-tag">Project Minimum</p>
+            <p class="pricing-num">$5,000</p>
+            <p class="pricing-note">One week minimum. Most projects run one to four weeks depending on scope.</p>
+          </div>
+          <div class="pricing-row">
+            <p class="pricing-tag">Creative Arrangements</p>
+            <p class="pricing-num">Open to it.</p>
+            <p class="pricing-note">For the right project we're occasionally open to trading services. Ask.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="network" id="network">
+      <p class="label">The network</p>
+      <div class="network-grid">
+        <div>
+          <h2>Some problems need more than one person.</h2>
+          <p>We have people we trust. A designer who builds brands from scratch. An engineer who ships. A financial strategist who works with founders. A social and brand operator who knows how to build an audience.</p>
+          <p>These aren't referrals. They're collaborators we've worked with and can vouch for. One point of contact. The right people deployed when the project calls for it.</p>
+        </div>
+        <ul class="network-list">
+          <li>
+            <span class="n-role">Design</span>
+            <span class="n-desc">Brand &amp; visual systems</span>
+          </li>
+          <li>
+            <span class="n-role">Engineering</span>
+            <span class="n-desc">Full-stack, ships fast</span>
+          </li>
+          <li>
+            <span class="n-role">Finance</span>
+            <span class="n-desc">Founder-focused strategy</span>
+          </li>
+          <li>
+            <span class="n-role">Brand &amp; Social</span>
+            <span class="n-desc">Audience &amp; presence</span>
+          </li>
+          <li>
+            <span class="n-role">Operations</span>
+            <span class="n-desc">Systems &amp; infrastructure</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-geo-1" aria-hidden="true"></div>
+      <div class="contact-geo-2" aria-hidden="true"></div>
+      <div class="contact-inner">
+        <h2>Let's have <em>lunch.</em></h2>
+        <br>
+        <a href="mailto:matthew@elysiantrading.com" class="contact-email">matthew@elysiantrading.com</a>
+        <br><br>
+        <p class="contact-locations">
+          Los Angeles <span>·</span> Orange County <span>·</span> Bay Area
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-name">Elysian Trading</span>
+    <span class="footer-jp">事業運営コンサルティング</span>
+    <span class="footer-copy">&copy; 2026 Fatcatty LLC</span>
+  </footer>
+
+</body>
+</html>
